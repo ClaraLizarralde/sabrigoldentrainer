@@ -1,4 +1,3 @@
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -708,4 +707,27 @@ footer {
   .plan-card:last-child { border-bottom: none; }
   footer { flex-direction: column; text-align: center; }
   .f-links { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ─── LANG SWITCHER ─── */
+#lang-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  background: transparent;
+  color: var(--yellow);
+  border: 1.5px solid var(--yellow);
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+#lang-btn:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+@media (max-width: 900px) {
+  #lang-btn { margin-left: auto; }
 }

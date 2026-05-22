@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="styles.css">
 
 <title>Sabri Gold · Personal Trainer</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
@@ -37,11 +40,12 @@
     <span class="sg">SG</span><span class="dot">·</span>TRAINER
   </div>
   <ul class="nav-links">
-    <li><a href="#servicios">servicios</a></li>
-    <li><a href="#planes">planes</a></li>
-    <li><a href="#sobre-mi">sobre mí</a></li>
-    <li><a href="#testimonios">opiniones</a></li>
-    <li><a href="https://wa.me/5491100000000" class="nav-cta">contacto</a></li>
+    <li><a href="#servicios" data-i18n="nav_servicios">servicios</a></li>
+    <li><a href="#planes" data-i18n="nav_planes">planes</a></li>
+    <li><a href="#sobre-mi" data-i18n="nav_sobre">sobre mí</a></li>
+    <li><a href="#testimonios" data-i18n="nav_opiniones">opiniones</a></li>
+    <li><a href="https://wa.me/5491100000000" class="nav-cta" data-i18n="nav_contacto">contacto</a></li>
+  <li style="border-left:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;padding:0 0.4rem"><button id="lang-btn" aria-label="Switch to English">EN</button></li>
   </ul>
 </nav>
 
@@ -73,16 +77,15 @@
 <section class="hero">
   <div class="hero-text">
     <div class="panel-main-inner">
-      <span class="hero-eyebrow">Profe de Educación Física · Buenos Aires</span>
+      <span class="hero-eyebrow" data-i18n="hero_eyebrow">Profe de Educación Física · Buenos Aires</span>
       <h1>
         ENTRENÁ<br>
         <span class="yellow">DONDE</span><br>
         <span class="stroke">ESTÉS.</span>
       </h1>
-      <div class="hero-tagline">"Acá nos superamos siempre — tus objetivos al alcance de tu mano"</div>
+      <div class="hero-tagline"><span data-i18n="hero_tagline">"Acá nos superamos siempre — tus objetivos al alcance de tu mano"</span></div>
       <p class="hero-desc">
-        Soy Sabri. Personal trainer con modalidad híbrida — presencial, online, en tu casa, en el parque, en el gym. 
-        Con lo que tenés y en el nivel que necesitás.
+        <span data-i18n="hero_desc">Soy Sabri. Personal trainer con modalidad híbrida — presencial, online, en tu casa, en el parque, en el gym. Con lo que tenés y en el nivel que necesitás.</span>
       </p>
       <div class="hero-btns">
         <a href="https://wa.me/5491100000000?text=Hola%20Sabri!" class="btn-main">
@@ -103,19 +106,19 @@
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">+200</div>
-    <div class="stat-lbl">alumnos</div>
+    <div class="stat-lbl" data-i18n="stat_alumnos">alumnos</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">+8</div>
-    <div class="stat-lbl">años de exp.</div>
+    <div class="stat-lbl" data-i18n="stat_exp">años de exp.</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">3</div>
-    <div class="stat-lbl">idiomas</div>
+    <div class="stat-lbl" data-i18n="stat_idiomas">idiomas</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">online + presencial</div>
-    <div class="stat-lbl">modalidad híbrida</div>
+    <div class="stat-num" data-i18n="stat_modalidad">online + presencial</div>
+    <div class="stat-lbl" data-i18n="stat_modalidad_lbl">modalidad híbrida</div>
   </div>
 </div>
 
@@ -128,11 +131,11 @@
 <section class="sec sec-dark" id="modalidad">
   <div class="sec-head fade">
     <span class="sec-num">00 /</span>
-    <h2 class="sec-title">modalidad & zonas</h2>
+    <h2 class="sec-title" data-i18n="sec00_title">modalidad & zonas</h2>
   </div>
   <div class="modality-grid fade">
     <div class="mod-panel">
-      <h3>Modalidad</h3>
+      <h3 data-i18n="mod_title">Modalidad</h3>
       <div class="mod-tags">
         <span class="mod-tag">🏠 A domicilio</span>
         <span class="mod-tag">🌳 En parque</span>
@@ -146,7 +149,7 @@
       </div>
     </div>
     <div class="mod-panel">
-      <h3>Zonas</h3>
+      <h3 data-i18n="zonas_title">Zonas</h3>
       <div class="mod-tags">
         <span class="mod-tag">CABA</span>
         <span class="mod-tag">Palermo</span>
@@ -175,7 +178,7 @@
 <section class="sec sec-white" id="servicios">
   <div class="sec-head fade">
     <span class="sec-num">01 /</span>
-    <h2 class="sec-title">servicios</h2>
+    <h2 class="sec-title" data-i18n="sec01_title">servicios</h2>
   </div>
   <div class="serv-grid fade">
     <div class="serv-card">
@@ -227,7 +230,7 @@
 <section class="sec sec-dark" id="sobre-mi">
   <div class="sec-head fade">
     <span class="sec-num">02 /</span>
-    <h2 class="sec-title">sobre mí</h2>
+    <h2 class="sec-title" data-i18n="sec02_title">sobre mí</h2>
   </div>
   <div class="sobre-layout fade">
     <div class="sobre-foto">
@@ -235,7 +238,7 @@
       <div class="sobre-nombre">SABRI GOLD</div>
     </div>
     <div class="sobre-txt">
-      <div class="sobre-slogan">Crea hábitos, suma vida.</div>
+      <div class="sobre-slogan" data-i18n="sobre_slogan">Crea hábitos, suma vida.</div>
       <p>Soy Sabri — profe de Educación Física apasionada por el movimiento. Trabajé con personas de todas las edades, niveles y culturas: desde quien nunca pisó un gym hasta deportistas de competencia, empresas y adultos mayores.</p>
       <p><strong>Mi misión es simple: ofrecerte entrenamiento personalizado que se adapte a tus objetivos y tu estilo de vida — sea online o presencial, con programación y guía 1 a 1.</strong></p>
       <p>Mi visión es construir una comunidad líder en entrenamiento híbrido (presencial + online) con proyección internacional. Sin límites generacionales ni idiomáticos.</p>
@@ -261,7 +264,7 @@
 <section class="sec sec-white" id="planes">
   <div class="sec-head fade">
     <span class="sec-num">03 /</span>
-    <h2 class="sec-title">planes</h2>
+    <h2 class="sec-title" data-i18n="sec03_title">planes</h2>
   </div>
   <div class="planes-grid fade">
     <div class="plan-card">
@@ -329,7 +332,7 @@
 <section class="sec sec-white" id="testimonios">
   <div class="sec-head fade">
     <span class="sec-num">04 /</span>
-    <h2 class="sec-title">opiniones</h2>
+    <h2 class="sec-title" data-i18n="sec04_title">opiniones</h2>
   </div>
   <div class="tests-grid fade">
     <div class="test-card">
@@ -363,11 +366,11 @@
 <section class="cta-section">
   <div class="cta-bg-word">GO!</div>
   <div class="cta-inner">
-    <h2>¿ARRAN<em>CAMOS?</em></h2>
-    <p>Mandame un mensaje y en menos de 24 horas te cuento cómo empezamos — sin importar dónde estés.</p>
+    <h2 data-i18n-html="cta_h2">¿ARRAN<em>CAMOS?</em></h2>
+    <p><span data-i18n="cta_p">Mandame un mensaje y en menos de 24 horas te cuento cómo empezamos — sin importar dónde estés.</span></p>
     <a href="https://wa.me/5491100000000?text=Hola%20Sabri!%20Vi%20tu%20página%20y%20quiero%20empezar" class="btn-wa">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      escribirme por whatsapp
+      <span data-i18n="cta_btn">escribirme por whatsapp</span>
     </a>
   </div>
 </section>
