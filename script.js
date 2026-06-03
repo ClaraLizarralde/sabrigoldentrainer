@@ -48,7 +48,7 @@ const translations = {
     hero_eyebrow: 'Profe de Educación Física · Buenos Aires',
     hero_h1: 'ENTRENÁ<br><span class="yellow">DONDE</span><br><span class="stroke">ESTÉS.</span>',
     hero_tagline: '"Acá nos superamos siempre — tus objetivos al alcance de tu mano"',
-    hero_desc: 'Soy Sabri. Personal trainer con modalidad híbrida — presencial, online, en tu casa, en el parque, en el gym. Con lo que tenés y en el nivel que necesitás.',
+    hero_desc: 'Soy Sabri, personal trainer. Presencial, online, en tu casa, en el parque, en el gym — con lo que tenés y en el nivel que necesitás. Sin experiencia previa, sin excusas. El único error es no empezar.',
     btn_escribir: 'escribirme',
     btn_planes: 'ver planes →',
     // STATS
@@ -161,7 +161,7 @@ const translations = {
     hero_eyebrow: 'Physical Education Teacher · Buenos Aires',
     hero_h1: 'TRAIN<br><span class="yellow">ANY</span><br><span class="stroke">WHERE.</span>',
     hero_tagline: '"We always push further — your goals, within reach"',
-    hero_desc: 'I\'m Sabri. A personal trainer with a hybrid approach — in-person, online, at your home, in the park, at the gym. With what you have, at the level you need.',
+    hero_desc: 'I\'m Sabri, a personal trainer. In-person, online, at your home, in the park, at the gym — with what you have, at the level you need. No prior experience needed, no excuses. The only mistake is not starting.',
     btn_escribir: 'message me',
     btn_planes: 'see plans →',
     stat_alumnos: 'students',

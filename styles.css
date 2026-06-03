@@ -371,39 +371,66 @@ nav {
   color: var(--white); font-style: normal;
 }
 
-/* ─── MODALIDAD / ZONAS ─── */
-.modality-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0; border: 3px solid var(--black);
+/* ─── MODALIDAD STRIP ─── */
+.modalidad-strip {
+  background: var(--dark);
+  border-bottom: 3px solid var(--black);
+  padding: 2rem 5%;
 }
-.mod-panel {
-  padding: 2rem;
-  border-right: 3px solid var(--black);
+.modalidad-strip-inner {
+  display: flex; gap: 2.5rem; align-items: flex-start;
+  flex-wrap: wrap;
 }
-.mod-panel:last-child { border-right: none; }
-.mod-panel h3 {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 1rem;
-  color: var(--purple);
+.ms-sep {
+  width: 2px; background: rgba(255,230,65,0.2);
+  align-self: stretch; min-height: 60px;
+  flex-shrink: 0;
 }
-.sec-dark .mod-panel h3 { color: var(--yellow); }
-.mod-tags {
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
+.ms-group {
+  flex: 1; min-width: 220px;
 }
-.mod-tag {
+.ms-label {
+  display: block;
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
-  border: 1.5px solid var(--purple);
-  color: var(--purple);
-  background: var(--purple-dim);
-  transition: background 0.15s, color 0.15s;
+  font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 0.75rem;
 }
-.mod-tag:hover { background: var(--purple); color: var(--white); }
-.sec-dark .mod-tag { border-color: var(--yellow); color: var(--yellow); background: rgba(255,230,65,0.08); }
-.sec-dark .mod-tag:hover { background: var(--yellow); color: var(--black); }
+.ms-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.ms-tags span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(255,230,65,0.3);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,230,65,0.05);
+}
+.ms-zonas span { font-size: 0.58rem; }
+.ms-tag-more {
+  border-color: var(--yellow) !important;
+  color: var(--yellow) !important;
+  background: rgba(255,230,65,0.1) !important;
+}
 
 /* ─── SERVICIOS ─── */
+.serv-intro {
+  padding: 0 3rem 3rem;
+  max-width: 720px;
+}
+.serv-intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+.serv-intro-claim {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
 .serv-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border: 3px solid var(--black); gap: 0;
@@ -500,6 +527,36 @@ nav {
   color: var(--yellow); font-size: 0.5rem; flex-shrink: 0;
 }
 .creds-list li strong { color: var(--white); }
+
+.sobre-filosofia {
+  margin-top: 3rem;
+  padding: 2.5rem 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.filosofia-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+
+.filosofia-quote {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.72);
+  max-width: 800px;
+  border-left: 3px solid var(--yellow);
+  padding: 1.2rem 1.6rem;
+  background: rgba(255,230,65,0.04);
+  font-style: normal;
+}
+
+.f-highlight {
+  color: var(--yellow);
+  font-weight: 700;
+  font-style: normal;
+}
 
 .idiomas-row {
   display: flex; gap: 0.5rem; margin-top: 1.2rem; flex-wrap: wrap;
@@ -689,6 +746,8 @@ footer {
   .modality-grid { grid-template-columns: 1fr; }
   .mod-panel { border-right: none; border-bottom: 3px solid var(--black); }
   .mod-panel:last-child { border-bottom: none; }
+  .ms-sep { display: none; }
+  .modalidad-strip-inner { gap: 1.5rem; }
   .serv-grid { grid-template-columns: 1fr 1fr; }
   .serv-card:nth-child(3n) { border-right: 2px solid var(--black); }
   .serv-card:nth-child(2n) { border-right: none; }
