@@ -27,6 +27,17 @@ intro.addEventListener('touchmove', e => {
 // Also dismiss after 6 seconds automatically
 setTimeout(dismiss, 6000);
 
+// ── ROTATING SWIPE PHOTOS ──
+const swipePhotos = document.querySelectorAll('.swipe-photo-wrap .swipe-photo');
+let currentPhoto = 0;
+if (swipePhotos.length > 1) {
+  setInterval(() => {
+    swipePhotos[currentPhoto].classList.remove('active');
+    currentPhoto = (currentPhoto + 1) % swipePhotos.length;
+    swipePhotos[currentPhoto].classList.add('active');
+  }, 2000);
+}
+
 // ── FADE IN ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
@@ -34,260 +45,125 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
 // ── LANGUAGE SWITCHER ──
+// El español vive en el HTML (es la fuente de verdad: se guarda al cargar la página).
+// Acá sólo va el inglés. Cada elemento traducible tiene data-i18n="clave" en el HTML.
 const translations = {
-  es: {
-    // NAV
-    nav_servicios: 'servicios',
-    nav_planes: 'planes',
-    nav_sobre: 'sobre mí',
-    nav_opiniones: 'opiniones',
-    nav_contacto: 'contacto',
-    // SWIPE
-    swipe_sub: 'sabrigoldtrainer.fit · CABA · Buenos Aires',
-    // HERO
-    hero_eyebrow: 'Profe de Educación Física · Buenos Aires',
-    hero_h1: 'ENTRENÁ<br><span class="yellow">DONDE</span><br><span class="stroke">ESTÉS.</span>',
-    hero_tagline: '"Acá nos superamos siempre — tus objetivos al alcance de tu mano"',
-    hero_desc: 'Soy Sabri, personal trainer. Presencial, online, en tu casa, en el parque, en el gym — con lo que tenés y en el nivel que necesitás. Sin experiencia previa, sin excusas. El único error es no empezar.',
-    btn_escribir: 'escribirme',
-    btn_planes: 'ver planes →',
-    // STATS
-    stat_alumnos: 'alumnos',
-    stat_exp: 'años de exp.',
-    stat_idiomas: 'idiomas',
-    stat_modalidad: 'online + presencial',
-    stat_modalidad_lbl: 'modalidad híbrida',
-    // DIFERENCIAL
-    diferencial: 'ENTRENÁ <em>DONDE</em> ESTÉS,<br>CON LO QUE <em>TENGAS.</em>',
-    // MODALIDAD
-    sec00: '00 /',
-    sec00_title: 'modalidad & zonas',
-    mod_title: 'Modalidad',
-    zonas_title: 'Zonas',
-    // SERVICIOS
-    sec01: '01 /',
-    sec01_title: 'servicios',
-    serv1_name: 'Personal Training',
-    serv1_desc: 'Plan 100% personalizado — fuerza, resistencia, composición corporal. Adaptado a tu nivel, tu objetivo y tu vida.',
-    serv1_badge: 'presencial / online',
-    serv2_name: 'Alto Rendimiento',
-    serv2_desc: 'Para deportistas que quieren ir un paso más. Método, seguimiento, resultados concretos. Experiencia en competencia.',
-    serv2_badge: 'especialización',
-    serv3_name: 'Entrenamiento Online',
-    serv3_desc: 'Evaluación + rutina mensual + videos demostrativos + seguimiento. Desde cualquier parte del mundo, en tu idioma.',
-    serv3_badge: '🌍 remoto global',
-    serv4_name: 'RCP & Primeros Auxilios',
-    serv4_desc: 'Instructora certificada (Argentina, Brasil, EE.UU. — Red Cross). Cursos para personas, familias e instituciones.',
-    serv4_badge: "certificación int'l",
-    serv5_name: 'Pausas Activas',
-    serv5_desc: 'Movilidad y activación para empresas y colegios. Dinámica, cercana y con impacto real en el equipo.',
-    serv5_badge: 'empresas · colegios',
-    serv6_name: 'Guardavidas',
-    serv6_desc: 'Habilitada en Argentina, Brasil y EE.UU. Para natatorios, clubes y eventos. También instructora de guardavidas.',
-    serv6_badge: 'triple certificación',
-    // SOBRE MÍ
-    sec02: '02 /',
-    sec02_title: 'sobre mí',
-    sobre_slogan: 'Crea hábitos, suma vida.',
-    sobre_p1: 'Soy Sabri — profe de Educación Física apasionada por el movimiento. Trabajé con personas de todas las edades, niveles y culturas: desde quien nunca pisó un gym hasta deportistas de competencia, empresas y adultos mayores.',
-    sobre_p2: '<strong>Mi misión es simple: ofrecerte entrenamiento personalizado que se adapte a tus objetivos y tu estilo de vida — sea online o presencial, con programación y guía 1 a 1.</strong>',
-    sobre_p3: 'Mi visión es construir una comunidad líder en entrenamiento híbrido (presencial + online) con proyección internacional. Sin límites generacionales ni idiomáticos.',
-    // PLANES
-    sec03: '03 /',
-    sec03_title: 'planes',
-    plan1_tag: 'para empezar',
-    plan1_name: 'BÁSICO ONLINE',
-    plan1_freq: 'por mes',
-    plan1_i1: 'Evaluación online',
-    plan1_i2: 'Rutina mensual (imágenes)',
-    plan1_i3: 'Plan personalizado',
-    plan1_i4: 'Seguimiento por WhatsApp',
-    plan1_btn: 'consultar →',
-    plan2_tag: '+ completo',
-    plan2_name: 'ONLINE PRO',
-    plan2_freq: 'por mes',
-    plan2_i1: 'Evaluación online',
-    plan2_i2: 'Rutina mensual + videos explicativos',
-    plan2_i3: 'Seguimiento semanal',
-    plan2_i4: 'Videollamadas de seguimiento',
-    plan2_i5: 'Ajustes ilimitados',
-    plan2_btn: 'lo quiero →',
-    plan3_tag: 'videollamada',
-    plan3_name: 'VIRTUAL LIVE',
-    plan3_freq: 'por mes',
-    plan3_i1: 'Evaluación online',
-    plan3_i2: 'Rutina mensual personalizada',
-    plan3_i3: 'Clases por videollamada (X/semana)',
-    plan3_i4: 'Seguimiento continuo',
-    plan3_btn: 'consultar →',
-    plan4_tag: '100% presencial',
-    plan4_name: 'PRESENCIAL',
-    plan4_freq: 'por mes',
-    plan4_i1: 'Evaluación presencial',
-    plan4_i2: 'Plan mensual personalizado',
-    plan4_i3: 'Clases presenciales (X/semana)',
-    plan4_i4: 'A domicilio, parque o gym',
-    plan4_i5: 'Seguimiento continuo',
-    plan4_btn: 'consultar →',
-    // TESTIMONIOS
-    sec04: '04 /',
-    sec04_title: 'opiniones',
-    test1: 'Empecé sin saber nada de entrenamiento y Sabri me guió desde cero. En 3 meses noté cambios increíbles, tanto físicos como en mi energía diaria.',
-    test1_name: 'Laura M.',
-    test1_meta: 'presencial · 6 meses',
-    test2: 'El plan online es perfecto para mi ritmo de vida. Tengo todo organizado y cuando tengo dudas siempre me contesta rápido. Recomendadísima.',
-    test2_name: 'Gonzalo R.',
-    test2_meta: 'online · 4 meses',
-    test3: 'Las pausas activas fueron un antes y un después para nuestro equipo. Muy dinámica, cercana y profesional. Ya la volvimos a contratar.',
-    test3_name: 'Valeria P.',
-    test3_meta: 'empresas · pausas activas',
-    // CTA
-    cta_h2: '¿ARRAN<em>CAMOS?</em>',
-    cta_p: 'Mandame un mensaje y en menos de 24 horas te cuento cómo empezamos — sin importar dónde estés.',
-    cta_btn: 'escribirme por whatsapp',
-    // FOOTER
-    f_servicios: 'servicios',
-    f_planes: 'planes',
-    f_sobre: 'sobre mí',
-    f_wa: 'whatsapp',
-  },
   en: {
+    // INTRO
+    swipe_h1: 'WE ALWAYS<br><span>PUSH</span><br>FURTHER',
+    swipe_sub: 'sabrigoldtrainer.fit · Buenos Aires · Worldwide',
+    // NAV
     nav_servicios: 'services',
-    nav_planes: 'plans',
     nav_sobre: 'about me',
+    nav_planes: 'plans',
     nav_opiniones: 'reviews',
     nav_contacto: 'contact',
-    swipe_sub: 'sabrigoldtrainer.fit · Buenos Aires · Worldwide',
+    // TICKER
+    tick_presencial: 'In-person · At home · In the park',
+    tick_profe: 'Physical Education Teacher',
+    tick_hibrida: 'Hybrid training',
+    // HERO
     hero_eyebrow: 'Physical Education Teacher · Buenos Aires',
-    hero_h1: 'TRAIN<br><span class="yellow">ANY</span><br><span class="stroke">WHERE.</span>',
-    hero_tagline: '"We always push further — your goals, within reach"',
-    hero_desc: 'I\'m Sabri, a personal trainer. In-person, online, at your home, in the park, at the gym — with what you have, at the level you need. No prior experience needed, no excuses. The only mistake is not starting.',
+    hero_h1: 'TRAIN<br><span class="yellow">WHEREVER</span><br><span class="stroke">YOU ARE.</span>',
+    hero_tagline: '"Here we always push further — your goals within reach"',
+    hero_desc: 'I\'m Sabri, a personal trainer. In person, online, at your home, in the park, at the gym — with what you have and at the level you need. There\'s a way of training that works for you. All you need is to take the first step.',
     btn_escribir: 'message me',
     btn_planes: 'see plans →',
-    stat_alumnos: 'students',
-    stat_exp: 'years exp.',
-    stat_idiomas: 'languages',
-    stat_modalidad: 'online + in-person',
-    stat_modalidad_lbl: 'hybrid training',
+    // DIFERENCIAL
     diferencial: 'TRAIN <em>WHERE</em> YOU ARE,<br>WITH <em>WHAT YOU HAVE.</em>',
-    sec00: '00 /',
-    sec00_title: 'modality & zones',
-    mod_title: 'Modality',
-    zonas_title: 'Areas',
-    sec01: '01 /',
+    // SERVICIOS
     sec01_title: 'services',
+    serv_intro: 'Personalized training sessions — you set the goal. No prior experience needed. If you\'ve never stepped into a gym, feel intimidated by the idea, or simply don\'t know where to start, I\'ll guide you. From a personalized routine adapted to your space and equipment, to 1-on-1 classes. As much or as little support as you need.',
+    serv_claim: '"The only mistake is not starting."',
     serv1_name: 'Personal Training',
-    serv1_desc: '100% personalized plan — strength, endurance, body composition. Adapted to your level, your goal and your lifestyle.',
+    serv1_desc: '100% personalized plan — strength, endurance, body composition. Adapted to your level, your goal and your life.',
     serv1_badge: 'in-person / online',
     serv2_name: 'High Performance',
-    serv2_desc: 'For athletes who want to go further. Method, tracking, concrete results. Competition experience.',
+    serv2_desc: 'For athletes who want to take it a step further. Method, tracking, concrete results. Competition experience.',
     serv2_badge: 'specialization',
     serv3_name: 'Online Training',
-    serv3_desc: 'Assessment + monthly routine + demo videos + coaching. From anywhere in the world, in your language.',
+    serv3_desc: 'Assessment + monthly routine + demo videos + follow-up. From anywhere in the world, in your language.',
     serv3_badge: '🌍 global remote',
     serv4_name: 'CPR & First Aid',
     serv4_desc: 'Certified instructor (Argentina, Brazil, USA — Red Cross). Courses for individuals, families and organizations.',
     serv4_badge: "int'l certification",
     serv5_name: 'Active Breaks',
-    serv5_desc: 'Mobility and activation for companies and schools. Dynamic, personal and with real impact on the team.',
+    serv5_desc: 'Mobility and activation sessions for companies and schools. Dynamic, approachable and with real impact on the team.',
     serv5_badge: 'companies · schools',
     serv6_name: 'Lifeguard',
     serv6_desc: 'Certified in Argentina, Brazil and the USA. For pools, clubs and events. Also a lifeguard instructor.',
     serv6_badge: 'triple certification',
-    sec02: '02 /',
+    serv_ig_txt: 'Find out about other activities on my Instagram',
+    // SOBRE MÍ
     sec02_title: 'about me',
-    sobre_slogan: 'Build habits, add life.',
-    sobre_p1: 'I\'m Sabri — a Physical Education teacher passionate about movement. I\'ve worked with people of all ages, levels and cultures: from first-timers to competitive athletes, corporations and seniors.',
-    sobre_p2: '<strong>My mission is simple: offer you personalized training that fits your goals and your lifestyle — online or in-person, with 1-on-1 programming and coaching.</strong>',
-    sobre_p3: 'My vision is to build a leading hybrid training community (in-person + online) with international reach. No generational or language barriers.',
-    sec03: '03 /',
+    sobre_p1: 'I\'m Sabrina Goldenstein, a Physical Education teacher from Buenos Aires. I spent my childhood in gyms, tagging along with my father — Master Jorge Goldenstein, founder of the Shaolin Lao Hu Kung Fu School. As a teenager I was already teaching kids\' classes and helping out in the adult ones. Movement has always been my world.',
+    sobre_p2: 'Over the years I kept widening my path: from working with kids to adult training, strength training and high performance. I kept studying because I always felt there was more to learn.',
+    cred1: '<strong>Physical Education Teacher (Profesorado Superior) — ISEF No. 1 Dr. Enrique Romero Brest</strong>',
+    cred2: 'Bachelor\'s in High-Performance Sport — Univ. of Lomas de Zamora',
+    cred3: '<strong>Lifeguard — Argentina (EPSA) · Brazil · USA (Red Cross)</strong>',
+    cred4: 'BLS Instructor (EPSA) · Lifeguard Instructor (Red Cross)',
+    cred5: 'Kung Fu Instructor — Shaolin Lao Hu School',
+    filosofia_tag: 'MY APPROACH',
+    filosofia_quote: 'When I train anyone, my north star is always <strong class="f-highlight">health</strong>. Whatever goal you start with — gaining <strong class="f-highlight">muscle mass</strong>, improving a specific <strong class="f-highlight">physical capacity</strong>, a particular <strong class="f-highlight">aesthetic</strong> goal — that north star is never lost. Maintaining and improving health in a <strong class="f-highlight">holistic</strong> way leads to a better <strong class="f-highlight">quality of life</strong>, a longer life expectancy and a wider margin to achieve any goal.',
+    // PLANES
     sec03_title: 'plans',
-    plan1_tag: 'to get started',
-    plan1_name: 'BASIC ONLINE',
-    plan1_freq: 'per month',
-    plan1_i1: 'Online assessment',
-    plan1_i2: 'Monthly routine (images)',
-    plan1_i3: 'Personalized plan',
-    plan1_i4: 'WhatsApp coaching',
-    plan1_btn: 'inquire →',
-    plan2_tag: 'most complete',
-    plan2_name: 'ONLINE PRO',
-    plan2_freq: 'per month',
-    plan2_i1: 'Online assessment',
-    plan2_i2: 'Monthly routine + video demos',
-    plan2_i3: 'Weekly check-in',
-    plan2_i4: 'Video call coaching',
-    plan2_i5: 'Unlimited adjustments',
-    plan2_btn: 'I want this →',
-    plan3_tag: 'video call',
-    plan3_name: 'VIRTUAL LIVE',
-    plan3_freq: 'per month',
-    plan3_i1: 'Online assessment',
-    plan3_i2: 'Personalized monthly routine',
-    plan3_i3: 'Live video call sessions (X/week)',
-    plan3_i4: 'Continuous coaching',
-    plan3_btn: 'inquire →',
-    plan4_tag: '100% in-person',
-    plan4_name: 'IN-PERSON',
-    plan4_freq: 'per month',
-    plan4_i1: 'In-person assessment',
-    plan4_i2: 'Personalized monthly plan',
-    plan4_i3: 'In-person sessions (X/week)',
-    plan4_i4: 'At home, park or gym',
-    plan4_i5: 'Continuous coaching',
-    plan4_btn: 'inquire →',
-    sec04: '04 /',
+    plan_presencial: 'In-person',
+    plan_sub: 'Personalized routine tailored to each student\'s goals',
+    plan_tag_a: 'to get started',
+    plan_tag_b: 'most complete',
+    plan_tag_c: 'live',
+    pA1: 'One live class for every routine change, to walk through the exercises and the routine ahead',
+    pA2: 'Videos of every exercise with explanation and demonstration',
+    pB1: 'Everything in Plan A',
+    pB2: 'One live class per week for corrections, follow-up and updates',
+    pC1: 'Written training plan',
+    pC2: 'Live class 3 times a week to train with real-time corrections and guidance',
+    pack4_name: '4 CLASSES',   pack4_item: 'Pack of 4 in-person classes',
+    pack8_name: '8 CLASSES',   pack8_item: 'Pack of 8 in-person classes',
+    pack12_name: '12 CLASSES', pack12_item: 'Pack of 12 in-person classes',
+    pack16_name: '16 CLASSES', pack16_item: 'Pack of 16 in-person classes',
+    pack20_name: '20 CLASSES', pack20_item: 'Pack of 20 in-person classes',
+    btn_consultar: 'inquire →',
+    btn_loquiero: 'I want this →',
+    // OPINIONES
     sec04_title: 'reviews',
-    test1: 'I started knowing nothing about training and Sabri guided me from scratch. In 3 months I noticed incredible changes, both physically and in my daily energy.',
-    test1_name: 'Laura M.',
-    test1_meta: 'in-person · 6 months',
-    test2: 'The online plan is perfect for my pace of life. Everything is organized and whenever I have questions she always responds quickly. Highly recommended.',
-    test2_name: 'Gonzalo R.',
-    test2_meta: 'online · 4 months',
-    test3: 'The active breaks were a before and after for our team. Very dynamic, approachable and professional. We hired her again.',
-    test3_name: 'Valeria P.',
-    test3_meta: 'corporate · active breaks',
-    cta_h2: 'LET\'S <em>START?</em>',
-    cta_p: 'Send me a message and within 24 hours I\'ll tell you how we begin — no matter where you are.',
+    test1: 'Excellent professional… warm, with highly skilled expertise. Recommended for everyone, regardless of age, fitness level or goals.',
+    test2: 'Besides being a lovely person, she\'s an excellent professional, attentive and careful with every detail. She has a great ability to give you the best exercise depending on each person\'s needs. Highly recommended!!!',
+    test3: 'I\'ve been training with Sabrina for over three years, and I honestly can\'t imagine being this consistent with my workouts without her! Sabrina is an incredible personal trainer. She takes the time to understand your goals and abilities, and creates personalized routines…',
+    rev_google: 'Google review · translated from Spanish',
+    rev_google_tr: 'Google review',
+    tests_more: 'You can read all the reviews on\n    <a href="https://share.google/JMkAfamA5KdgbKmgG" target="_blank" rel="noopener">Google →</a>',
+    // CTA
+    cta_h2: 'READY TO <em>START?</em>',
+    cta_p: 'Send me a message and within 24 hours I\'ll tell you how we can get started — no matter where you are.',
     cta_btn: 'message me on whatsapp',
+    // FOOTER
     f_servicios: 'services',
-    f_planes: 'plans',
     f_sobre: 'about me',
-    f_wa: 'whatsapp',
+    f_planes: 'plans',
   }
 };
+
+// Guardar el español original (del HTML) para poder volver a él
+const i18nEls = document.querySelectorAll('[data-i18n]');
+i18nEls.forEach(el => { el.dataset.es = el.innerHTML; });
 
 let currentLang = 'es';
 
 function applyLang(lang) {
-  const t = translations[lang];
-  // NAV links
-  document.querySelector('[data-i18n="nav_servicios"]').textContent = t.nav_servicios;
-  document.querySelector('[data-i18n="nav_planes"]').textContent = t.nav_planes;
-  document.querySelector('[data-i18n="nav_sobre"]').textContent = t.nav_sobre;
-  document.querySelector('[data-i18n="nav_opiniones"]').textContent = t.nav_opiniones;
-  document.querySelector('[data-i18n="nav_contacto"]').textContent = t.nav_contacto;
-  // All data-i18n text nodes
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      if (el.innerHTML !== undefined && t[key].includes('<')) {
-        el.innerHTML = t[key];
-      } else {
-        el.textContent = t[key];
-      }
+  i18nEls.forEach(el => {
+    const key = el.dataset.i18n;
+    if (lang === 'es') {
+      el.innerHTML = el.dataset.es;
+    } else if (translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
+    } else {
+      console.warn('Falta traducción al inglés para:', key);
     }
   });
-  // HTML content nodes
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.getAttribute('data-i18n-html');
-    if (t[key] !== undefined) el.innerHTML = t[key];
-  });
-  // Update lang button label
   const btn = document.getElementById('lang-btn');
   btn.textContent = lang === 'es' ? 'EN' : 'ES';
   btn.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
-  // Update html lang
   document.documentElement.lang = lang;
   currentLang = lang;
 }
