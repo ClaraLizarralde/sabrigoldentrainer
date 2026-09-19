@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://profesabri.fit/sitemap.xml
