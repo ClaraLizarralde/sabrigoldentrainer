@@ -141,6 +141,7 @@ const translations = {
     f_servicios: 'services',
     f_sobre: 'about me',
     f_planes: 'plans',
+    f_foto: 'photography:',
   }
 };
 
