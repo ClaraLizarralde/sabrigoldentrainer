@@ -77,13 +77,14 @@ body::after {
   position: relative; z-index: 1; text-align: center;
   margin-bottom: 2.5rem;
 }
-.swipe-headline h1 {
+.swipe-headline .swipe-title {
+  font-weight: bold;
   font-family: 'Bebas Neue', cursive;
   font-size: clamp(3rem, min(14vw, 13vh), 8rem);   /* limitado por ancho Y alto */
   color: var(--white); line-height: 0.9;
   letter-spacing: 3px;
 }
-.swipe-headline h1 span { color: var(--yellow); }
+.swipe-headline .swipe-title span { color: var(--yellow); }
 .swipe-headline p {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem; letter-spacing: 3px;
@@ -859,6 +860,7 @@ footer {
   transition: background 0.15s, color 0.15s;
   margin-left: 0.5rem;
   flex-shrink: 0;
+  display: inline-block; text-decoration: none; line-height: normal;   /* ahora es un link (<a>), no un <button> */
 }
 #lang-btn:hover {
   background: var(--yellow);

@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
 
 <title>Profe Sabri · Personal Trainer en Buenos Aires y Online</title>
-<meta name="description" content="Profe de Educación Física en Buenos Aires. Entrenamiento personalizado presencial y online, alto rendimiento, RCP y guardavidas. Entrená donde estés, con lo que tengas.">
+<meta name="description" content="Personal trainer y profe de Educación Física en Buenos Aires. Entrenamiento presencial y online, alto rendimiento y RCP. Entrená donde estés.">
 <link rel="canonical" href="https://profesabri.fit/">
+<link rel="alternate" hreflang="es" href="https://profesabri.fit/">
+<link rel="alternate" hreflang="en" href="https://profesabri.fit/en/">
+<link rel="alternate" hreflang="x-default" href="https://profesabri.fit/">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Telegram, iMessage) -->
 <meta property="og:type" content="website">
@@ -20,6 +25,7 @@
 <meta property="og:image:alt" content="Profe Sabri, personal trainer en Buenos Aires">
 <meta property="og:site_name" content="Profe Sabri">
 <meta property="og:locale" content="es_AR">
+<meta property="og:locale:alternate" content="en_US">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
@@ -36,12 +42,21 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HealthClub",
+  "@type": "ProfessionalService",
   "name": "Profe Sabri",
+  "alternateName": ["Sabrina Goldenstein", "profesabri"],
   "url": "https://profesabri.fit/",
   "image": "https://profesabri.fit/og-image.jpg",
   "description": "Personal training presencial y online en Buenos Aires.",
+  "areaServed": ["Buenos Aires", "Online"],
   "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
+  "founder": {
+    "@type": "Person",
+    "name": "Sabrina Goldenstein",
+    "jobTitle": "Profesora de Educación Física",
+    "knowsLanguage": ["Spanish", "English", "Portuguese"],
+    "sameAs": ["https://www.instagram.com/profesabri"]
+  },
   "sameAs": ["https://www.instagram.com/profesabri"]
 }
 </script>
@@ -59,8 +74,8 @@
   </div>
   <div class="swipe-logo-top">PROFE SABRI · PERSONAL TRAINER</div>
   <div class="swipe-headline">
-    <h1 data-i18n="swipe_h1">ACÁ NOS <br><span>SUPERAMOS</span><br>SIEMPRE</h1>
-    <p data-i18n="swipe_sub">profesabri.fit · CABA · Buenos Aires</p>
+    <div class="swipe-title">ACÁ NOS <br><span>SUPERAMOS</span><br>SIEMPRE</div>
+    <p>profesabri.fit · CABA · Buenos Aires</p>
   </div>
   <div class="swipe-arrow-block">
     <div class="swipe-label">swipe up</div>
@@ -78,12 +93,12 @@
     <span class="sg">Profe Sabri</span><span class="dot">·</span> <span class="nav-role">PERSONAL TRAINER</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#servicios" data-i18n="nav_servicios">servicios</a></li>
-    <li><a href="#sobre-mi" data-i18n="nav_sobre">sobre mí</a></li>
-    <li><a href="#planes" data-i18n="nav_planes">planes</a></li>
-    <li><a href="#testimonios" data-i18n="nav_opiniones">opiniones</a></li>
-    <li><a href="https://wa.me/5491158769537" class="nav-cta" data-i18n="nav_contacto">contacto</a></li>
-  <li style="border-left:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;padding:0 0.4rem"><button id="lang-btn" aria-label="Switch to English">EN</button></li>
+    <li><a href="#servicios">servicios</a></li>
+    <li><a href="#sobre-mi">sobre mí</a></li>
+    <li><a href="#planes">planes</a></li>
+    <li><a href="#testimonios">opiniones</a></li>
+    <li><a href="https://wa.me/5491158769537" class="nav-cta">contacto</a></li>
+  <li style="border-left:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;padding:0 0.4rem"><a id="lang-btn" href="/en/" hreflang="en" lang="en" aria-label="Switch to English">EN</a></li>
   </ul>
 </nav>
 
@@ -93,9 +108,9 @@
 <span>Personal Training</span><span class="dot-sep">◆</span>
 <span>CABA · Buenos Aires</span><span class="dot-sep">◆</span>
 <span>Online</span><span class="dot-sep">◆</span>
-<span data-i18n="tick_presencial">Presencial · Online · En parque</span><span class="dot-sep">◆</span>
-<span data-i18n="tick_profe">Profe de Educación Física</span><span class="dot-sep">◆</span>
-<span data-i18n="tick_hibrida">Modalidad híbrida</span><span class="dot-sep">◆</span>
+<span>Presencial · Online · En parque</span><span class="dot-sep">◆</span>
+<span>Profe de Educación Física</span><span class="dot-sep">◆</span>
+<span>Modalidad híbrida</span><span class="dot-sep">◆</span>
 <span>profesabri.fit</span><span class="dot-sep">◆</span>
   </div>
 </div>
@@ -104,22 +119,22 @@
 <section class="hero">
   <div class="hero-text">
     <div class="panel-main-inner">
-      <span class="hero-eyebrow" data-i18n="hero_eyebrow">Profe de Educación Física · Buenos Aires</span>
-      <h1 data-i18n="hero_h1">
+      <span class="hero-eyebrow">Profe de Educación Física · Buenos Aires</span>
+      <h1>
         ENTRENÁ<br>
         <span class="yellow">DONDE</span><br>
         <span class="stroke">ESTÉS.</span>
       </h1>
-      <div class="hero-tagline"><span data-i18n="hero_tagline">"Acá nos superamos siempre — tus objetivos al alcance de tu mano"</span></div>
+      <div class="hero-tagline"><span>"Acá nos superamos siempre — tus objetivos al alcance de tu mano"</span></div>
       <p class="hero-desc">
-        <span data-i18n="hero_desc">Soy Sabri, personal trainer. Presencial, online, en tu casa, en el parque, en el gym — con lo que tenés y en el nivel que necesitás. Hay una forma de entrenar que funciona para vos. Lo único que necesitás es dar el primer paso.</span>
+        <span>Soy Sabri, personal trainer. Presencial, online, en tu casa, en el parque, en el gym — con lo que tenés y en el nivel que necesitás. Hay una forma de entrenar que funciona para vos. Lo único que necesitás es dar el primer paso.</span>
       </p>
       <div class="hero-btns">
         <a href="https://wa.me/5491158769537?text=Hola%20Sabri!" class="btn-main">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span data-i18n="btn_escribir">escribirme</span>
+          <span>escribirme</span>
         </a>
-        <a href="#planes" class="btn-sec" data-i18n="btn_planes">ver planes →</a>
+        <a href="#planes" class="btn-sec">ver planes →</a>
       </div>
     </div>
   </div>
@@ -132,68 +147,68 @@
 
 <!-- DIFERENCIAL -->
 <div class="diferencial">
-  <p data-i18n="diferencial">ENTRENÁ <em>DONDE</em> ESTÉS,<br>CON LO QUE <em>TENGAS.</em></p>
+  <p>ENTRENÁ <em>DONDE</em> ESTÉS,<br>CON LO QUE <em>TENGAS.</em></p>
 </div>
 
 <!-- SERVICIOS -->
 <section class="sec sec-white" id="servicios">
   <div class="sec-head fade">
     <span class="sec-num">01 /</span>
-    <h2 class="sec-title" data-i18n="sec01_title">servicios</h2>
+    <h2 class="sec-title">servicios</h2>
   </div>
   <div class="serv-intro fade">
-    <p data-i18n="serv_intro">Clases personalizadas de entrenamiento — el objetivo lo ponés vos. No hace falta experiencia previa. Si nunca entraste a un gym, te da miedo hacerlo, o simplemente no sabés por dónde empezar, yo te ofrezco una guía. Desde una rutina personalizada adaptada a tu espacio y materiales, hasta clases 1 a 1. Desde y hasta donde vos necesitás ayuda.</p>
-    <span class="serv-intro-claim" data-i18n="serv_claim">"El único error es no empezar."</span>
+    <p>Clases personalizadas de entrenamiento — el objetivo lo ponés vos. No hace falta experiencia previa. Si nunca entraste a un gym, te da miedo hacerlo, o simplemente no sabés por dónde empezar, yo te ofrezco una guía. Desde una rutina personalizada adaptada a tu espacio y materiales, hasta clases 1 a 1. Desde y hasta donde vos necesitás ayuda.</p>
+    <span class="serv-intro-claim">"El único error es no empezar."</span>
   </div>
   <div class="serv-grid fade">
     <div class="serv-card">
       <span class="serv-num">01</span>
       <div class="serv-icon">💪</div>
-      <h3 data-i18n="serv1_name">Personal Training</h3>
-      <p data-i18n="serv1_desc">Plan 100% personalizado — fuerza, resistencia, composición corporal. Adaptado a tu nivel, tu objetivo y tu vida.</p>
-      <span class="serv-badge" data-i18n="serv1_badge">presencial / online</span>
+      <h3>Personal Training</h3>
+      <p>Plan 100% personalizado — fuerza, resistencia, composición corporal. Adaptado a tu nivel, tu objetivo y tu vida.</p>
+      <span class="serv-badge">presencial / online</span>
     </div>
     <div class="serv-card">
       <span class="serv-num">02</span>
       <div class="serv-icon">🎯</div>
-      <h3 data-i18n="serv2_name">Alto Rendimiento</h3>
-      <p data-i18n="serv2_desc">Para deportistas que quieren ir un paso más. Método, seguimiento, resultados concretos. Experiencia en competencia.</p>
-      <span class="serv-badge" data-i18n="serv2_badge">especialización</span>
+      <h3>Alto Rendimiento</h3>
+      <p>Para deportistas que quieren ir un paso más. Método, seguimiento, resultados concretos. Experiencia en competencia.</p>
+      <span class="serv-badge">especialización</span>
     </div>
     <div class="serv-card">
       <span class="serv-num">03</span>
       <div class="serv-icon">📱</div>
-      <h3 data-i18n="serv3_name">Entrenamiento Online</h3>
-      <p data-i18n="serv3_desc">Evaluación + rutina mensual + videos demostrativos + seguimiento. Desde cualquier parte del mundo, en tu idioma.</p>
-      <span class="serv-badge" data-i18n="serv3_badge">🌍 remoto global</span>
+      <h3>Entrenamiento Online</h3>
+      <p>Evaluación + rutina mensual + videos demostrativos + seguimiento. Desde cualquier parte del mundo, en tu idioma.</p>
+      <span class="serv-badge">🌍 remoto global</span>
     </div>
     <div class="serv-card">
       <span class="serv-num">04</span>
       <div class="serv-icon">❤️‍🩹</div>
-      <h3 data-i18n="serv4_name">RCP & Primeros Auxilios</h3>
-      <p data-i18n="serv4_desc">Instructora certificada (Argentina, Brasil, EE.UU. — Red Cross). Cursos para personas, familias e instituciones.</p>
-      <span class="serv-badge" data-i18n="serv4_badge">certificación int'l</span>
+      <h3>RCP & Primeros Auxilios</h3>
+      <p>Instructora certificada (Argentina, Brasil, EE.UU. — Red Cross). Cursos para personas, familias e instituciones.</p>
+      <span class="serv-badge">certificación int'l</span>
     </div>
     <div class="serv-card">
       <span class="serv-num">05</span>
       <div class="serv-icon">🧘</div>
-      <h3 data-i18n="serv5_name">Pausas Activas</h3>
-      <p data-i18n="serv5_desc">Movilidad y activación para empresas y colegios. Dinámica, cercana y con impacto real en el equipo.</p>
-      <span class="serv-badge" data-i18n="serv5_badge">empresas · colegios</span>
+      <h3>Pausas Activas</h3>
+      <p>Movilidad y activación para empresas y colegios. Dinámica, cercana y con impacto real en el equipo.</p>
+      <span class="serv-badge">empresas · colegios</span>
     </div>
     <div class="serv-card">
       <span class="serv-num">06</span>
       <div class="serv-icon">🏊</div>
-      <h3 data-i18n="serv6_name">Guardavidas</h3>
-      <p data-i18n="serv6_desc">Habilitada en Argentina, Brasil y EE.UU. Para natatorios, clubes y eventos. También instructora de guardavidas.</p>
-      <span class="serv-badge" data-i18n="serv6_badge">triple certificación</span>
+      <h3>Guardavidas</h3>
+      <p>Habilitada en Argentina, Brasil y EE.UU. Para natatorios, clubes y eventos. También instructora de guardavidas.</p>
+      <span class="serv-badge">triple certificación</span>
     </div>
   </div>
 
   <div class="serv-ig-wrap fade">
     <a href="https://www.instagram.com/profesabri" class="serv-ig" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-      <span class="serv-ig-txt" data-i18n="serv_ig_txt">Enterate de otras actividades en mi Instagram</span>
+      <span class="serv-ig-txt">Enterate de otras actividades en mi Instagram</span>
       <span class="serv-ig-btn">@profesabri →</span>
     </a>
   </div>
@@ -204,7 +219,7 @@
 <section class="sec sec-dark" id="sobre-mi">
   <div class="sec-head fade">
     <span class="sec-num">02 /</span>
-    <h2 class="sec-title" data-i18n="sec02_title">sobre mí</h2>
+    <h2 class="sec-title">sobre mí</h2>
   </div>
   <div class="sobre-layout fade">
     <div class="sobre-foto">
@@ -213,14 +228,14 @@
     </div>
     <div class="sobre-txt">
       <!-- PARTE 1: BIOGRAFÍA -->
-      <p data-i18n="sobre_p1">Soy Sabrina Goldenstein, profesora de Educación Física de Buenos Aires. Pasé mi infancia en gimnasios, acompañando a mi padre — el Maestro Jorge Goldenstein, fundador de la Escuela de Kung Fu Shaolin Lao Hu. Desde adolescente ya daba clases infantiles y ayudaba en las de adultos. El movimiento siempre fue mi mundo.</p>
-      <p data-i18n="sobre_p2">Con los años fui ampliando el camino: del trabajo con chicos al entrenamiento adulto, la musculación y el alto rendimiento. Seguí formándome porque siempre sentí que había más por saber.</p>
+      <p>Soy Sabrina Goldenstein, profesora de Educación Física de Buenos Aires. Pasé mi infancia en gimnasios, acompañando a mi padre — el Maestro Jorge Goldenstein, fundador de la Escuela de Kung Fu Shaolin Lao Hu. Desde adolescente ya daba clases infantiles y ayudaba en las de adultos. El movimiento siempre fue mi mundo.</p>
+      <p>Con los años fui ampliando el camino: del trabajo con chicos al entrenamiento adulto, la musculación y el alto rendimiento. Seguí formándome porque siempre sentí que había más por saber.</p>
       <ul class="creds-list">
-        <li data-i18n="cred1"><strong>Profesora Superior de Educación Física — ISEF 1 Dr. Enrique Romero Brest</strong></li>
-        <li data-i18n="cred2">Lic. en Alto Rendimiento Deportivo — Univ. de Lomas de Zamora</li>
-        <li data-i18n="cred3"><strong>Guardavidas — Argentina (EPSA) · Brasil · EE.UU. (Red Cross)</strong></li>
-        <li data-i18n="cred4">Instructora SVB (EPSA) · Lifeguard Instructor (Red Cross)</li>
-        <li data-i18n="cred5">Instructora de Kung Fu — Escuela Shaolin Lao Hu</li>
+        <li><strong>Profesora Superior de Educación Física — ISEF 1 Dr. Enrique Romero Brest</strong></li>
+        <li>Lic. en Alto Rendimiento Deportivo — Univ. de Lomas de Zamora</li>
+        <li><strong>Guardavidas — Argentina (EPSA) · Brasil · EE.UU. (Red Cross)</strong></li>
+        <li>Instructora SVB (EPSA) · Lifeguard Instructor (Red Cross)</li>
+        <li>Instructora de Kung Fu — Escuela Shaolin Lao Hu</li>
       </ul>
       <div class="idiomas-row">
         <span class="idioma-tag">🇦🇷 Español</span>
@@ -232,8 +247,8 @@
 
   <!-- PARTE 2: FILOSOFÍA -->
   <div class="sobre-filosofia fade">
-    <div class="filosofia-tag" data-i18n="filosofia_tag">MI ENFOQUE</div>
-    <blockquote class="filosofia-quote" data-i18n="filosofia_quote">
+    <div class="filosofia-tag">MI ENFOQUE</div>
+    <blockquote class="filosofia-quote">
       Mi norte a la hora de entrenar a cualquier persona siempre es la <strong class="f-highlight">salud</strong>. Sin importar el objetivo con el que empieces — ganar <strong class="f-highlight">masa muscular</strong>, mejorar alguna <strong class="f-highlight">capacidad</strong>, un objetivo <strong class="f-highlight">estético</strong> particular — ese norte nunca se pierde. Mantener y mejorar la salud de forma <strong class="f-highlight">integral</strong> nos lleva a tener mejor <strong class="f-highlight">calidad de vida</strong>, mayor esperanza de vida y un margen más amplio para lograr cualquier objetivo.
     </blockquote>
   </div>
@@ -244,103 +259,103 @@
 <section class="sec sec-white" id="planes">
   <div class="sec-head fade">
     <span class="sec-num">03 /</span>
-    <h2 class="sec-title" data-i18n="sec03_title">planes</h2>
+    <h2 class="sec-title">planes</h2>
   </div>
 
   <!-- ONLINE -->
   <div class="plan-group fade">
     <h3 class="plan-group-title">Online</h3>
-    <p class="plan-group-sub" data-i18n="plan_sub">Rutina personalizada acorde a los objetivos del alumno</p>
+    <p class="plan-group-sub">Rutina personalizada acorde a los objetivos del alumno</p>
   </div>
   <div class="planes-grid planes-grid--3 fade">
     <div class="plan-card">
-      <span class="plan-tag" data-i18n="plan_tag_a">para empezar</span>
+      <span class="plan-tag">para empezar</span>
       <div class="plan-name">PLAN A</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pA1">Una clase en vivo por cada cambio de rutina, para explicar los ejercicios y la rutina a trabajar</span></li>
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pA2">Videos de cada ejercicio con su explicación y demostración</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Una clase en vivo por cada cambio de rutina, para explicar los ejercicios y la rutina a trabajar</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Videos de cada ejercicio con su explicación y demostración</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20A" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20A" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
 
     <div class="plan-card featured">
-      <span class="plan-tag" data-i18n="plan_tag_b">+ completo</span>
+      <span class="plan-tag">+ completo</span>
       <div class="plan-name">PLAN B</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pB1">Todo lo del plan A</span></li>
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pB2">Una clase en vivo por semana para correcciones, seguimiento y actualización</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Todo lo del plan A</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Una clase en vivo por semana para correcciones, seguimiento y actualización</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20B" class="btn-plan btn-plan-yellow" target="_blank" rel="noopener" data-i18n="btn_loquiero">lo quiero →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20B" class="btn-plan btn-plan-yellow" target="_blank" rel="noopener">lo quiero →</a>
     </div>
 
     <div class="plan-card">
-      <span class="plan-tag" data-i18n="plan_tag_c">en vivo</span>
+      <span class="plan-tag">en vivo</span>
       <div class="plan-name">PLAN C</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pC1">Planificación escrita</span></li>
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pC2">Clase en vivo 3 veces por semana para entrenar con correcciones y orientación en tiempo real</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Planificación escrita</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Clase en vivo 3 veces por semana para entrenar con correcciones y orientación en tiempo real</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20C" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20Plan%20Online%20C" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
   </div>
 
   <!-- PRESENCIAL -->
   <div class="plan-group fade">
-    <h3 class="plan-group-title" data-i18n="plan_presencial">Presencial</h3>
-    <p class="plan-group-sub" data-i18n="plan_sub">Rutina personalizada acorde a los objetivos del alumno</p>
+    <h3 class="plan-group-title">Presencial</h3>
+    <p class="plan-group-sub">Rutina personalizada acorde a los objetivos del alumno</p>
   </div>
   <div class="planes-grid planes-grid--5 fade">
     <div class="plan-card">
       <span class="plan-tag">pack 1</span>
-      <div class="plan-name" data-i18n="pack4_name">4 CLASES</div>
+      <div class="plan-name">4 CLASES</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pack4_item">Pack de 4 clases presenciales</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Pack de 4 clases presenciales</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%204%20clases" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%204%20clases" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
 
     <div class="plan-card">
       <span class="plan-tag">pack 2</span>
-      <div class="plan-name" data-i18n="pack8_name">8 CLASES</div>
+      <div class="plan-name">8 CLASES</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pack8_item">Pack de 8 clases presenciales</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Pack de 8 clases presenciales</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%208%20clases" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%208%20clases" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
 
     <div class="plan-card featured">
       <span class="plan-tag">pack 3</span>
-      <div class="plan-name" data-i18n="pack12_name">12 CLASES</div>
+      <div class="plan-name">12 CLASES</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pack12_item">Pack de 12 clases presenciales</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Pack de 12 clases presenciales</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2012%20clases" class="btn-plan btn-plan-yellow" target="_blank" rel="noopener" data-i18n="btn_loquiero">lo quiero →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2012%20clases" class="btn-plan btn-plan-yellow" target="_blank" rel="noopener">lo quiero →</a>
     </div>
 
     <div class="plan-card">
       <span class="plan-tag">pack 4</span>
-      <div class="plan-name" data-i18n="pack16_name">16 CLASES</div>
+      <div class="plan-name">16 CLASES</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pack16_item">Pack de 16 clases presenciales</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Pack de 16 clases presenciales</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2016%20clases" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2016%20clases" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
 
     <div class="plan-card">
       <span class="plan-tag">pack 5</span>
-      <div class="plan-name" data-i18n="pack20_name">20 CLASES</div>
+      <div class="plan-name">20 CLASES</div>
       <hr class="plan-divider">
       <ul class="plan-items">
-        <li><span class="ok" aria-hidden="true">+</span> <span data-i18n="pack20_item">Pack de 20 clases presenciales</span></li>
+        <li><span class="ok" aria-hidden="true">+</span> <span>Pack de 20 clases presenciales</span></li>
       </ul>
-      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2020%20clases" class="btn-plan" target="_blank" rel="noopener" data-i18n="btn_consultar">consultar →</a>
+      <a href="https://wa.me/5491158769537?text=Me%20interesa%20el%20pack%20presencial%20de%2020%20clases" class="btn-plan" target="_blank" rel="noopener">consultar →</a>
     </div>
   </div>
 </section>
@@ -349,35 +364,35 @@
 <section class="sec sec-white" id="testimonios">
   <div class="sec-head fade">
     <span class="sec-num">04 /</span>
-    <h2 class="sec-title" data-i18n="sec04_title">opiniones</h2>
+    <h2 class="sec-title">opiniones</h2>
   </div>
   <div class="tests-grid fade">
     <div class="test-card">
       <span class="test-quote-mark">"</span>
-      <p class="test-txt" data-i18n="test1">Excelente profesional....con calidez y los conocimientos de alto perfil. Recomendable para todos, más allá de edad, estado físico y objetivos.</p>
+      <p class="test-txt">Excelente profesional....con calidez y los conocimientos de alto perfil. Recomendable para todos, más allá de edad, estado físico y objetivos.</p>
       <div class="test-meta">
         <strong>Adriana Lifschitz</strong>
-        <span data-i18n="rev_google">reseña en Google</span>
+        <span>reseña en Google</span>
       </div>
     </div>
     <div class="test-card">
       <span class="test-quote-mark">"</span>
-      <p class="test-txt" data-i18n="test2">Además d una hermosa persona es excelente profesional, atenta y cuidadosa en cada detalle. Con un gran capacidad para darte el mejor ejercicio dependiendo d las necesidades d cada uno. Recomendadísima!!!</p>
+      <p class="test-txt">Además d una hermosa persona es excelente profesional, atenta y cuidadosa en cada detalle. Con un gran capacidad para darte el mejor ejercicio dependiendo d las necesidades d cada uno. Recomendadísima!!!</p>
       <div class="test-meta">
         <strong>Anahi Malbec</strong>
-        <span data-i18n="rev_google">reseña en Google</span>
+        <span>reseña en Google</span>
       </div>
     </div>
     <div class="test-card">
       <span class="test-quote-mark">"</span>
-      <p class="test-txt" data-i18n="test3">Llevo más de tres años entrenando con Sabrina, ¡y sinceramente no me imagino ser tan constante con mi rutina de ejercicios sin ella! Sabrina es una entrenadora personal increíble. Se toma el tiempo para comprender tus objetivos y capacidades, y crea rutinas personalizadas…</p>
+      <p class="test-txt">Llevo más de tres años entrenando con Sabrina, ¡y sinceramente no me imagino ser tan constante con mi rutina de ejercicios sin ella! Sabrina es una entrenadora personal increíble. Se toma el tiempo para comprender tus objetivos y capacidades, y crea rutinas personalizadas…</p>
       <div class="test-meta">
         <strong>sol garay</strong>
-        <span data-i18n="rev_google_tr">reseña en Google · traducida del inglés</span>
+        <span>reseña en Google · traducida del inglés</span>
       </div>
     </div>
   </div>
-  <p class="tests-more fade" data-i18n="tests_more">
+  <p class="tests-more fade">
     Podés ver todas las opiniones en
     <a href="https://share.google/JMkAfamA5KdgbKmgG" target="_blank" rel="noopener">Google →</a>
   </p>
@@ -389,12 +404,12 @@
 <section class="cta-section">
   <div class="cta-bg-word">GO!</div>
   <div class="cta-inner">
-    <h2 data-i18n="cta_h2">¿ARRAN<em>CAMOS?</em></h2>
-    <p><span data-i18n="cta_p">Mandame un mensaje y en menos de 24 horas te cuento cómo empezamos — sin importar dónde estés.</span></p>
+    <h2>¿ARRAN<em>CAMOS?</em></h2>
+    <p><span>Mandame un mensaje y en menos de 24 horas te cuento cómo empezamos — sin importar dónde estés.</span></p>
     <div class="cta-btns">
     <a href="https://wa.me/5491158769537?text=Hola%20Sabri!%20Vi%20tu%20página%20y%20quiero%20empezar" class="btn-wa">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      <span data-i18n="cta_btn">escribirme por whatsapp</span>
+      <span>escribirme por whatsapp</span>
     </a>
     <a href="https://www.instagram.com/profesabri" class="cta-ig" target="_blank" rel="noopener" aria-label="Instagram @profesabri">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
@@ -407,14 +422,14 @@
 <footer>
   <div class="f-logo">PROFE<em> SABRI</em></div>
   <ul class="f-links">
-    <li><a href="#servicios" data-i18n="f_servicios">servicios</a></li>
-    <li><a href="#sobre-mi" data-i18n="f_sobre">sobre mí</a></li>
-    <li><a href="#planes" data-i18n="f_planes">planes</a></li>
+    <li><a href="#servicios">servicios</a></li>
+    <li><a href="#sobre-mi">sobre mí</a></li>
+    <li><a href="#planes">planes</a></li>
     <li><a href="https://wa.me/5491158769537?text=Hola%20Sabri!%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20entrenar%20con%20vos%2C%20hablemos!">whatsapp</a></li>
     <li><a href="https://www.instagram.com/profesabri" target="_blank" rel="noopener">instagram</a></li>
     <li><a href="https://profesabri.fit">profesabri.fit</a> </li>
   </ul>
-  <div class="f-copy">© 2026 PROFE SABRI PERSONAL TRAINER<br><span data-i18n="f_foto">fotografía:</span> <a href="https://www.instagram.com/doaless/" target="_blank" rel="noopener">@doaless</a></div>
+  <div class="f-copy">© 2026 PROFE SABRI PERSONAL TRAINER<br><span>fotografía:</span> <a href="https://www.instagram.com/doaless/" target="_blank" rel="noopener">@doaless</a></div>
 </footer>
 
 <a href="https://wa.me/5491158769537?text=Hola%20Sabri!%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20entrenar%20con%20vos%2C%20hablemos!" class="wa-float" target="_blank">
