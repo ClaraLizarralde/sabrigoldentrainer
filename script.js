@@ -51,7 +51,7 @@ const translations = {
   en: {
     // INTRO
     swipe_h1: 'WE ALWAYS<br><span>PUSH</span><br>FURTHER',
-    swipe_sub: 'sabrigoldtrainer.fit · Buenos Aires · Worldwide',
+    swipe_sub: 'profesabri.fit · Buenos Aires · Worldwide',
     // NAV
     nav_servicios: 'services',
     nav_sobre: 'about me',
